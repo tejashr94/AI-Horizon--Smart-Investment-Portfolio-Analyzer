@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI HORIZON — Smart Investment Analyzer</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-left">
+      <div class="logo-mark">📈</div>
+      <div>
+        <div class="logo-name">AI HORIZON</div>
+        <div class="logo-tagline">Smart Investment &amp; Portfolio Analyzer</div>
+      </div>
+    </div>
+    <div class="header-right">
+      <span class="live-dot"></span>
+      <span class="live-label">Live</span>
+    </div>
+  </header>
+
+  <!-- LAYOUT -->
+  <div class="layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <div class="sidebar-block">
+        <div class="block-label">Team</div>
+        <div class="team-badge">🚀 AI HORIZON</div>
+        <div class="member-list">
+          <div class="member">
+            <div class="avatar">KG</div>
+            <span class="member-name">Kapil Gupta</span>
+          </div>
+          <div class="member">
+            <div class="avatar">DS</div>
+            <span class="member-name">Devansh Sharma</span>
+          </div>
+          <div class="member">
+            <div class="avatar">TR</div>
+            <span class="member-name">Tejash Raj</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar-block">
+        <div class="block-label">Project</div>
+        <p class="project-desc">Smart Investment Diversification Guide — analyzes portfolios and suggests AI-driven strategies for optimized returns.</p>
+        <div class="impl-steps">
+          <div class="impl-step"><span>1</span> Utilize Relevant Tools</div>
+          <div class="impl-step"><span>2</span> Fetch Relevant API</div>
+          <div class="impl-step"><span>3</span> Integrate &amp; Personalize</div>
+        </div>
+      </div>
+
+      <div class="sidebar-block">
+        <div class="block-label">Quick Ask</div>
+        <button class="quick-btn" onclick="askQuick('How do I diversify my portfolio?')">Portfolio Diversification</button>
+        <button class="quick-btn" onclick="askQuick('What is the best asset allocation strategy?')">Asset Allocation</button>
+        <button class="quick-btn" onclick="askQuick('Compare stocks vs bonds vs gold')">Asset Comparison</button>
+        <button class="quick-btn" onclick="askQuick('How to manage investment risk?')">Risk Management</button>
+        <button class="quick-btn" onclick="askQuick('Best sectors to invest in right now?')">Sector Analysis</button>
+        <button class="quick-btn" onclick="askQuick('How to analyze a stock before buying?')">Stock Analysis</button>
+      </div>
+
+    </aside>
+
+    <!-- CHAT -->
+    <main class="chat">
+
+      <div id="messages">
+
+        <!-- Welcome card -->
+        <div class="welcome">
+          <div class="welcome-icon">💼</div>
+          <h2 class="welcome-title">Smart Investment Advisor</h2>
+          <p class="welcome-desc">Ask me anything about portfolio diversification, asset allocation, risk management, and investment strategies. I provide data-driven insights with charts.</p>
+          <div class="welcome-pills">
+            <button class="pill" onclick="askQuick('What is portfolio diversification?')">Portfolio Basics</button>
+            <button class="pill" onclick="askQuick('Show me a sample diversified portfolio allocation')">Sample Allocation</button>
+            <button class="pill" onclick="askQuick('What is the 60/40 investment rule?')">60/40 Rule</button>
+            <button class="pill" onclick="askQuick('How do I reduce investment risk?')">Risk Reduction</button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Input -->
+      <div class="input-area">
+        <div class="input-box">
+          <textarea
+            id="user-input"
+            rows="1"
+            placeholder="Ask about investments, portfolios, diversification strategies…"
+            onkeydown="handleKey(event)"
+            oninput="autoResize(this)"
+          ></textarea>
+          <button id="send-btn" onclick="sendMessage()" title="Send">&#10148;</button>
+        </div>
+        <p class="input-note">AI HORIZON · Specialized in Investment &amp; Portfolio Analysis only</p>
+      </div>
+
+    </main>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
